@@ -6,14 +6,14 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Good-Great-Grand-Wonderful
       url-base: https://github.com/Good-Great-Grand-Wonderful
-    - name: rtb12347
-      url-base: https://github.com/rtb12347
+    - name: jlovald
+      url-base: https://github.com/jlovald
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
     - name: gggw-zmk-keebs
-      remote: rtb12347
+      remote: jlovald
       revision: main
       import: config/west.yml
   self:
