@@ -5,16 +5,32 @@
 / {
     chosen { zmk,physical-layout = &gggw_crosses_42_layout; };
 
+    behaviors {
+        ralt_layer1: ralt_layer1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RALT_LAYER1";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&kp RIGHT_ALT>;
+        };
+
+        mouse_wingGUI: mouse_wingGUI {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOUSE_WINGGUI";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&kp LEFT_WIN>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E           &kp R   &kp T   &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D           &kp F   &kp G   &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C           &kp V   &kp B   &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &lt 1 LEFT_WIN  &trans  &trans  &kp RET  &mo 2  &kp RALT
+&kp TAB    &kp Q  &kp W  &kp E           &kp R          &kp T      &kp Y    &kp U  &kp I         &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D           &kp F          &kp G      &kp H    &kp J  &kp K         &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C           &kp V          &kp B      &kp N    &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp ESC
+                         &mouse_wingGUI  &kp BACKSPACE  &kp SPACE  &kp RET  &mo 2  &ralt_layer1
             >;
         };
 
@@ -43,7 +59,7 @@
             bindings = <
 &trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &mkp MB4   &mkp MB5   &trans  &trans  &trans  &trans  &trans  &trans  &trans
                            &trans     &trans     &trans  &trans  &trans  &trans
             >;
         };
