@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    chosen { zmk,physical-layout = &gggw_crosses_42_layout; };
 
     behaviors {
         ralt_layer1: ralt_layer1 {
