@@ -9,9 +9,6 @@ manifest:
     - name: jlovald
       url-base: https://github.com/jlovald
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      import: app/west.yml
     - name: gggw-zmk-keebs
       remote: jlovald
       revision: alignWithMain
