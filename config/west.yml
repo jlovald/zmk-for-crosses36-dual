@@ -14,7 +14,7 @@ manifest:
       import: app/west.yml
     - name: gggw-zmk-keebs
       remote: jlovald
-      revision: main
+      revision: alignWithMain
       import: config/west.yml
   self:
     path: config
